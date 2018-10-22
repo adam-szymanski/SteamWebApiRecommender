@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package structs;
+
+import "structs/http_response.proto";
+
+message UserHttpResponse {
+    uint64 user_id = 1;
+    HttpResponse http_response = 2;
+}
+
+message GamePlaytime {
+    uint64 playtime = 1;
+    uint64 playtime_2_weeks = 2;
+}
+
+message User {
+    uint64 user_id = 1;
+    map<uint64, GamePlaytime> games_playtime = 2;
+    int64 last_owned_games_update = 3;
+}

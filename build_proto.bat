@@ -1,0 +1,1 @@
+protoc --go_out=. structs/http_response.proto structs/user_data.proto structs/product_data.proto structs/serving_data.proto

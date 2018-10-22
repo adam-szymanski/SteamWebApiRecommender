@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package structs;
+
+import "structs/product_data.proto";
+
+message ProductScoredList {
+    repeated uint64 product_ids = 1;
+    repeated float scores = 2;
+}
+
+message ProductSortedPreferences {
+    map<uint64, ProductScoredList> products = 1;
+}
+
+message ServingData {
+    map<string, ProductSortedPreferences> preferencesMap = 1;
+    map<uint64, Product> products = 2;
+}

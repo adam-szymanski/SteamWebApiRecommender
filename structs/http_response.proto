@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package structs;
+
+message HttpResponse {
+    uint32 response_code = 1;
+    int64 timestamp = 2;
+    bytes body = 3;
+}

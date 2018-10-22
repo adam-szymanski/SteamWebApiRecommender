@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package structs;
+
+import "structs/http_response.proto";
+
+message ProductHttpResponse {
+    uint64 product_id = 1;
+    HttpResponse http_response = 2;
+}
+
+message ProductPreferences {
+    map<uint64, float> preferences = 1;
+    repeated float percentiles = 2;
+}
+
+message ProductsPreferences {
+    map<uint64, ProductPreferences> products = 1;
+}
+
+message PreferencesMap {
+    map<string, ProductsPreferences> preferencesMap = 1;
+}
+
+message ProductStoreData {
+    string name = 1;
+    string banerUrl = 2;
+    repeated string tags = 3;
+    repeated string genre = 4;
+    repeated string flags = 5;
+    repeated string developer = 6;
+    repeated string publisher = 7;
+    repeated string thumbnails = 8;
+    repeated string trailers = 9;
+    int64 release_date = 10;
+    int32 reviews = 11;
+}
+
+message ProductStoreDataDump {
+    ProductStoreData data = 1;
+    int64 timestamp = 2;
+    uint64 id = 3;
+}
+
+message Product {
+    uint64 id = 1;
+    uint64 owners_num = 2;
+    float fraction_of_owners = 3;
+    repeated uint64 playtime_percentile = 4;
+
+    ProductStoreData store_data = 5;
+}
