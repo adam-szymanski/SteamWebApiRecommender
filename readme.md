@@ -4,6 +4,8 @@
 
 This is a prototype. It consist several components that are used to build working solution.
 
+## Components
+
 ### User crawler
 
 This is placed in user_crawler/user_crawler.go. It is crawling Steam user profiles and places them in dump folder. To use it please put your SteamWebAPI key in apiKey const.
